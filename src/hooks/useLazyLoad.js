@@ -1,4 +1,3 @@
-// src/hooks/useLazyLoad.js
 import { useEffect } from 'react';
 
 export const useLazyLoad = (setPage) => {

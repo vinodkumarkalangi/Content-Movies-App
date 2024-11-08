@@ -5,7 +5,7 @@ function Thumbnail({ name, poster }) {
     const fallbackImage = 'https://test.create.diagnal.com/images/placeholder_for_missing_posters.png';
     const [imgSrc, setImgSrc] = useState(`https://test.create.diagnal.com/images/${poster}`);
     const handleError = () => {
-        setImgSrc(fallbackImage);  // Update source to fallback image
+        setImgSrc(fallbackImage);
     };
   return (
     <div className="thumbnail">

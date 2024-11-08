@@ -1,4 +1,3 @@
-// src/pages/ContentListing.js
 import React, { useContext } from 'react';
 import { DataContext } from '../contexts/DataContext';
 import Thumbnail from '../components/Thumbnail';
