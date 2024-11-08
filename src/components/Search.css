@@ -1,0 +1,72 @@
+.MainHeader {
+    position: sticky;
+    top: 0;             
+    z-index: 1000; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #171717;
+    transition: box-shadow 0.3s ease;  
+    box-shadow: none;  
+}
+.MainHeader.scrolled {
+    box-shadow: 0px 20px 20px #171717;
+}
+.headBack {
+    margin: 10px 0px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+.headBack img {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+.searchSection {
+    display: flex;
+    align-items: end;
+}
+.title {
+    font-size: 20px;
+  font-weight: 400;
+}
+
+.searchIcon img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    padding-right: 15px;
+}
+
+.searchInputWrapper {
+    display: none;
+    transition: opacity 0.3s ease, max-height 0.3s ease;;
+}
+
+.searchInputWrapper.active {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin-right: 20px;
+}
+.searchInputWrapper input {
+    padding: '8px';
+    width: '100%';
+    border-radius: '4px';
+    border: '1px solid #ddd';
+}
+.searchInputWrapper input {
+    padding: 8px;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+@media only screen and (max-width: 767px) {
+    .searchInputWrapper.active {
+        max-width: 100px;
+        margin-right: 15px;
+    }
+}

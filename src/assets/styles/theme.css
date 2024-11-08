@@ -1,0 +1,40 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Titillium Web', sans-serif;
+    background-color: #171717;
+    color: #FFFFFF;
+}
+  
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0 10px;
+}
+  
+h2 {
+    color: #FFFFFF;
+}
+.movies_list {
+    margin: 0;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 8px;
+    width: 100%;
+    margin: 16px;
+}
+  
+@media only screen and (max-width: 767px) {
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+@media only screen and (max-width: 560px) {
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+}
