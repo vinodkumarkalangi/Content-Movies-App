@@ -58,13 +58,13 @@ function Search() {
   return (
     <div className={`MainHeader ${isScrolled ? 'scrolled' : ''}`}>
       <div className='headBack'>
-        <img src='https://test.create.diagnal.com/images/Back.png' alt='Back Image' />
+        <img src='https://test.create.diagnal.com/images/Back.png'/>
         <h1 className="title">Romantic Comedy</h1>
       </div>
 
       <div className='searchSection'>
         <div className='searchIcon' onClick={toggleSearchInput}>
-            <img src='https://test.create.diagnal.com/images/search.png' alt='Search Icon' />
+            <img src='https://test.create.diagnal.com/images/search.png'/>
         </div>
 
         <div className={`searchInputWrapper ${showSearchInput ? 'active' : ''}`}>

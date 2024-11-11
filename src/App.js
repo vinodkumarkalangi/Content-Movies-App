@@ -1,7 +1,7 @@
 // src/App.js
 import React from 'react';
 import ContentListing from './pages/ContentListing';
-import { ThemeProvider, useTheme } from './contexts/ThemeContext';
+import { ThemeProvider } from './contexts/ThemeContext';
 import { DataProvider } from './contexts/DataContext';
 import Search from './components/Search';
 import './assets/styles/theme.css';
