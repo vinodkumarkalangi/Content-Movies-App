@@ -2,17 +2,18 @@ import React, { useState } from 'react';
 import './Thumbnail.css';
 
 function Thumbnail({ name, poster }) {
-    const fallbackImage = 'https://test.create.diagnal.com/images/placeholder_for_missing_posters.png';
-    const [imgSrc, setImgSrc] = useState(`https://test.create.diagnal.com/images/${poster}`);
-    const handleError = () => {
-        setImgSrc(fallbackImage);
-    };
-  return (
-    <div className="thumbnail">
-      <img src={imgSrc}  alt={name} onError={handleError} />
-      <p>{name}</p>
-    </div>
-  );
+  const fallbackImage = 'https://test.create.diagnal.com/images/placeholder_for_missing_posters.png';
+    
+    return (
+        <div className="thumbnail">
+            <img 
+                src={`https://test.create.diagnal.com/images/${poster}`}
+                alt={name}
+                onError={(e) => { e.target.onerror = null; e.target.src = fallbackImage; }}
+            />
+            <p>{name}</p>
+        </div>
+    );
 }
 
 export default Thumbnail;

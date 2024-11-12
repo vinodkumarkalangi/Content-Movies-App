@@ -58,7 +58,7 @@ function Search() {
     <div className={`MainHeader ${isScrolled ? 'scrolled' : ''}`}>
       <div className='headBack'>
         <img src="https://test.create.diagnal.com/images/Back.png" alt="" /> {/* Decorative image */}
-        <h1 className="title">Romantic Comedy</h1>
+        <h1 className={`title ${showSearchInput ? 'search_active' : ''}`}>Romantic Comedy</h1>
       </div>
 
       <div className='searchSection'>

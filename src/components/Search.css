@@ -17,7 +17,7 @@
     margin: 10px 0px;
     display: flex;
     align-items: center;
-    padding: 0 10px;
+    padding: 0 2px;
 }
 .headBack img {
     width: 16px;
@@ -28,6 +28,9 @@
     display: flex;
     align-items: end;
 }
+.title.search_active {
+    font-size: 14px;
+}
 .title {
     font-size: 20px;
   font-weight: 400;
@@ -37,7 +40,7 @@
     width: 20px;
     height: 20px;
     cursor: pointer;
-    padding-right: 15px;
+    padding: 5px 5px 0px 0px;
 }
 
 .searchInputWrapper {
@@ -68,5 +71,8 @@
     .searchInputWrapper.active {
         max-width: 100px;
         margin-right: 15px;
+    }
+    .headBack {
+        height: 40px;
     }
 }
