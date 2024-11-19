@@ -14,7 +14,6 @@ export const DataProvider = ({ children }) => {
 
   useEffect(() => {
     const getData = async () => {
-      if (isFetching) return;
       if(page === 1) {
         setIsFetching(true);
       }else{
