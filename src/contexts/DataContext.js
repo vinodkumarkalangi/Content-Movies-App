@@ -14,17 +14,15 @@ export const DataProvider = ({ children }) => {
 
   useEffect(() => {
     const getData = async () => {
-      if (isFetching) return; // Prevent over-fetching
+      if (isFetching) return;
       if(page === 1) {
         setIsFetching(true);
       }
       const newItems = await fetchData(page);
 
       setItems((prevItems) => {
-        //setItems((prevItems) => [...prevItems, ...newItems]); // Merge with existing items
         const combinedItems = [...prevItems, ...newItems];
         return combinedItems;
-        //return Array.from(new Map(combinedItems.map((item) => [item.name, item])).values());
       });
       setIsFetching(false);
     };
