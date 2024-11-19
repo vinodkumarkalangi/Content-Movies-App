@@ -8,33 +8,36 @@ export const DataProvider = ({ children }) => {
   const [items, setItems] = useState([]);
   const [page, setPage] = useState(1);
   const [filteredData, setFilteredData] = useState([]);
+  const [isFetching, setIsFetching] = useState(false);
 
-  // Custom hook to handle lazy loading
   useLazyLoad(setPage);
 
   useEffect(() => {
     const getData = async () => {
-      const newItems = await fetchData(page);
-      console.log("New items fetched:", newItems);
-
-      if (Array.isArray(newItems)) {
-        setItems((prevItems) => [...prevItems, ...newItems]);
-      } else {
-        console.warn('Fetched data is not an array:', newItems);
+      if (isFetching) return; // Prevent over-fetching
+      if(page === 1) {
+        setIsFetching(true);
       }
+      const newItems = await fetchData(page);
+
+      setItems((prevItems) => {
+        //setItems((prevItems) => [...prevItems, ...newItems]); // Merge with existing items
+        const combinedItems = [...prevItems, ...newItems];
+        return combinedItems;
+        //return Array.from(new Map(combinedItems.map((item) => [item.name, item])).values());
+      });
+      setIsFetching(false);
     };
 
     getData();
   }, [page]);
 
   useEffect(() => {
-    if (items.length > 0) {
-      setFilteredData(items);
-    }
+    setFilteredData(items);
   }, [items]);
 
   return (
-    <DataContext.Provider value={{ items, setItems, filteredData, setFilteredData }}>
+    <DataContext.Provider value={{ items, filteredData, setFilteredData, isFetching }}>
       {children}
     </DataContext.Provider>
   );

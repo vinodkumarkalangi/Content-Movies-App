@@ -62,9 +62,7 @@ function Search() {
       </div>
 
       <div className='searchSection'>
-        <div className='searchIcon' onClick={toggleSearchInput}>
-            <img src="https://test.create.diagnal.com/images/search.png" alt="Search" /> {/* Descriptive alt text */}
-        </div>
+        
 
         <div className={`searchInputWrapper ${showSearchInput ? 'active' : ''}`}>
             <input
@@ -74,6 +72,15 @@ function Search() {
             onChange={handleSearch}
             />
         </div>
+
+        <div className='searchIcon' onClick={toggleSearchInput}>
+            {showSearchInput ? (
+                <span>X</span>
+              ) : (
+                <img src="https://test.create.diagnal.com/images/search.png" alt="Search" />
+              )}
+        </div>
+        
       </div>
     </div>
   );
