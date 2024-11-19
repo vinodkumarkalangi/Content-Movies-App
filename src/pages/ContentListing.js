@@ -19,7 +19,7 @@ function ContentListing() {
         ))
       ) : (
         // Show message when no data is available
-        <p>No movies found</p>
+        <p>Not found</p>
       )}
     </div>
   );
