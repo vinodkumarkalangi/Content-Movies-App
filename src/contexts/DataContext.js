@@ -17,6 +17,8 @@ export const DataProvider = ({ children }) => {
       if (isFetching) return;
       if(page === 1) {
         setIsFetching(true);
+      }else{
+        setIsFetching(false);
       }
       const newItems = await fetchData(page);
 

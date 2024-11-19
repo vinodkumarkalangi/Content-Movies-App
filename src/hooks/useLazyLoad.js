@@ -13,7 +13,7 @@ export const useLazyLoad = (setPage) => {
         ) {
           setPage((prevPage) => prevPage + 1);
         }
-      }, 200);
+      }, 100);
     };
 
     window.addEventListener('scroll', handleScroll);
